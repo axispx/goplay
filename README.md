@@ -20,3 +20,9 @@ Go get the project.
 |------|-----------------------------------------------|---------|
 | root | The absolute path to you music directory.     | None    |
 | port | The port on which you want to run the server. | 3000    |
+
+### Environment Variables
+You can set GOPLAYROOT environment variable as the path to your music directory.
+You don't need to provide root flag after setting the variable.
+
+`export GOPLAYROOT=/path/to/your/music/directory`

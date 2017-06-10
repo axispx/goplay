@@ -1,7 +1,10 @@
 body {
     margin: 0;
     font-family: Roboto;
-    height: 100vh;
+}
+
+.root {
+    overflow: hidden;
 }
 
 .goplay {
@@ -11,7 +14,8 @@ body {
     padding: 10px;
     box-shadow: 2px 0 8px 0 grey;
     top: 0;
-    width: 100%;
+    right: 0;
+    left: 0;
     position: fixed;
 }
 
@@ -92,6 +96,7 @@ body {
 }
 
 .songs {
+    display: bloxck;
     margin: 70px 5px 105px 5px;
 }
 

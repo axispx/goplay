@@ -58,12 +58,20 @@ func main() {
 	rt := flag.String("root", "", "directory to get music files from")
 	flag.Parse()
 	if *rt == "" {
-		fmt.Println("Please provide the root directory.")
-		return
+		goPlayRoot := os.Getenv("GOPLAYROOT")
+		if goPlayRoot == "" {
+			fmt.Println("\tPlease provide the root directory through the root flag")
+			fmt.Printf("\tor by setting GOPLAYROOT environment variable.\n\n")
+			fmt.Println("\tEnter goplay -h for help")
+			return
+		}
+		root = goPlayRoot
+	} else {
+		root = *rt
 	}
 
-	root = *rt
 	gopath := os.Getenv("GOPATH")
+
 	staticPath := gopath + "/src/github.com/anarchyrucks/goplay/static"
 
 	r := mux.NewRouter()
