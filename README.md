@@ -19,4 +19,4 @@ Go get the project.
 | Name | Description                                   | Default |
 |------|-----------------------------------------------|---------|
 | root | The absolute path to you music directory.     | None    |
-| port | The port on which you want to run the server, | 3000    |
+| port | The port on which you want to run the server. | 3000    |
