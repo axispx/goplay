@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Player</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="root">
+            <div class="goplay">GoPlay</div>
+            <audio id="htmlAudioPlayer"></audio>
+            <div class="songs"></div>
+            <br/>
+            <div class="player">
+                <div class="progressBar"></div>
+                <div class="controls">
+                    <div id="previous" class="smallButton"><span class="fa fa-step-backward"></span></div>
+                    <div id="skipBackward" class="smallButton"><span class="fa fa-backward"></span></div>
+                    <div id="playPause" class="smallButton"><span class="fa fa-play"></span></div>
+                    <div id="skipForward" class="smallButton"><span class="fa fa-forward"></span></div>
+                    <div id="next" class="smallButton"><span class="fa fa-step-forward"></span></div>
+                </div>
+                <div class="songName"></div>
+            </div>
+        </div>
+    </body>
+</html>
