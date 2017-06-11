@@ -67,21 +67,24 @@ $("document").ready(function() {
     function updatePlayer() {
         var nth = currentSongIndex + 1;
 
-        $("#htmlAudioPlayer").attr("src", "/songs/" + songsArray[currentSongIndex]);
         $(".song").removeClass("selected");
         $(".songName").text(songsArray[currentSongIndex]);
         $(".songs div:nth-child(" + nth + ")").addClass("selected");
+        $("#htmlAudioPlayer").attr("src", "/songs/" + songsArray[currentSongIndex]);
     }
 
     function nextSong() {
         progressBar.style.width = 0;
         increaseIndex();
         updatePlayer();
+        togglePlay();
     }
 
     function previousSong() {
+        progressBar.style.width = 0;
         decreaseIndex();
         updatePlayer();
+        togglePlay();
     }
 
     function skipForward() {

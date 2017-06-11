@@ -53,29 +53,44 @@ func songHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, path)
 }
 
+const errorMessage = `	
+	Please provide the root directory through the root flag
+	or by setting GOPLAYROOT environment variable.
+	
+	Provide root flag as following
+		goplay -root="/path/to/your/music/directory"
+	
+	To add the GOPLAROOT add this to you .bashrc or your related
+	shell config file;
+		export GOPLAYROOT=/path/to/your/music/directory
+
+	For the info about all the flags supported run
+		goplay -h
+
+	NOTE: root flag is given priority over the GOPLAYROOT so that
+	you can provide different directory even after setting GOPLAYROOT.
+`
+
 func main() {
 	port := flag.String("port", "3000", "port to run the application on")
 	rt := flag.String("root", "", "directory to get music files from")
 	flag.Parse()
-	if *rt == "" {
+
+	if *rt != "" {
+		root = *rt
+	} else {
 		goPlayRoot := os.Getenv("GOPLAYROOT")
 		if goPlayRoot == "" {
-			fmt.Println("\tPlease provide the root directory through the root flag")
-			fmt.Printf("\tor by setting GOPLAYROOT environment variable.\n\n")
-			fmt.Println("\tEnter goplay -h for help")
+			fmt.Println(errorMessage)
 			return
 		}
 		root = goPlayRoot
-	} else {
-		root = *rt
 	}
 
 	gopath := os.Getenv("GOPATH")
-
 	staticPath := gopath + "/src/github.com/anarchyrucks/goplay/static"
 
 	r := mux.NewRouter()
-
 	r.HandleFunc("/songs", songsHandler)
 	r.HandleFunc("/songs/{song}", songHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir(staticPath)))
