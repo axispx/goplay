@@ -1,22 +1,54 @@
 body {
     margin: 0;
     font-family: Roboto;
+    height: 100%;
 }
 
 .root {
     overflow: hidden;
 }
 
-.goplay {
-    font-size: 32px;
+.navbar {
     background-color: #34495e;
-    color: white;
     padding: 10px;
     box-shadow: 2px 0 8px 0 grey;
     top: 0;
     right: 0;
     left: 0;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.goplay {
+    color: white;
+    font-size: 32px;
+}
+
+.search {
+    font-size: 18px;
+    width: 174px;
+}
+
+.searchResults {
+    font-size: 18px;
+    width: 180px;
+    background-color: #d8d8d8;
+    position: fixed;
+    right: 10px;
+    top: 48px;
+    box-shadow: 0 2px 4px #888;
+}
+
+.searchResult {
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+}
+
+.searchResult:hover {
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
 }
 
 .player {
@@ -96,7 +128,6 @@ body {
 }
 
 .songs {
-    display: bloxck;
     margin: 70px 5px 105px 5px;
 }
 

@@ -53,13 +53,13 @@ func songHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, path)
 }
 
-const errorMessage = `	
+const errorMessage = `
 	Please provide the root directory through the root flag
 	or by setting GOPLAYROOT environment variable.
-	
+
 	Provide root flag as following
 		goplay -root="/path/to/your/music/directory"
-	
+
 	To add the GOPLAROOT add this to you .bashrc or your related
 	shell config file;
 		export GOPLAYROOT=/path/to/your/music/directory

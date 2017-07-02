@@ -8,10 +8,15 @@
 		<script type="text/javascript" src="index.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style.css">
+        <link rel="manifest" href="manifest.json">
     </head>
     <body>
         <div class="root">
-            <div class="goplay">GoPlay</div>
+            <div class="navbar">
+                <div class="goplay">GoPlay</div>
+                <input type="text" placeholder="Search" class="search" />
+            </div>
+            <div class="searchResults"></div>
             <audio id="htmlAudioPlayer"></audio>
             <div class="songs"></div>
             <br/>
