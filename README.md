@@ -29,8 +29,5 @@ You don't need to provide `root` flag after setting the variable.
 
 NOTE: `root` flag is given priority over the `GOPLAYROOT` so that you can provide different directory even after setting `GOPLAYROOT`.
 
-## PWA
-The app is a progressive web app. Add it to home screen in your mobile device to use it as a standalone app.
-
 ## License
 MIT
