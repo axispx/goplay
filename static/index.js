@@ -50,7 +50,7 @@ $('document').ready(function() {
     }
 
     function decreaseIndex() {
-        if (currentSongIndex == 0) {
+        if (currentSongIndex === 0) {
             currentSongIndex = songsArray.length - 1;
         } else {
             currentSongIndex--;
@@ -137,7 +137,7 @@ $('document').ready(function() {
     }
 
     function handleSearch() {
-        searchString = search.value.trim();
+        searchString = search.value.trim().toLowerCase();
         searchResultsArray = [];
         $('.searchResults').empty();
         if (searchString !== '' && searchString.length > 2) {
@@ -167,7 +167,7 @@ $('document').ready(function() {
         togglePlay();
 
         // clear search results
-        if (searchResultsArray.length != 0) {
+        if (searchResultsArray.length !== 0) {
             search.value = '';
             $('.searchResults').empty();
         }
